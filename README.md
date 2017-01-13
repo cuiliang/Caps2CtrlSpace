@@ -6,3 +6,6 @@ CapsLock 切换输入法中英文
 # 开发环境
  VS2015
  
+#Exe下载
+https://github.com/cuiliang/Caps2CtrlSpace/blob/master/Caps2CtrlSpace.exe
+  
