@@ -11,6 +11,8 @@ namespace Caps2CtrlSpace
 {
     public class KeyMapper
     {
+        private static readonly TimeSpan Interval = TimeSpan.FromMilliseconds(100);
+
         private const int WH_KEYBOARD_LL = 13;
 
         private const int WM_KEYDOWN = 0x0100;
@@ -61,6 +63,8 @@ namespace Caps2CtrlSpace
                 if ((Keys)vkCode == Keys.Capital)
                 {
                     SendKeys.Send("^ "); //将CapsLock转换为Ctrl+Space
+                    System.Threading.Thread.Sleep(Interval);
+
                     return (IntPtr)1;
                 }
 
