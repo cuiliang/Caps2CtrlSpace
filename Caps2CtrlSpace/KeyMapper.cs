@@ -6,11 +6,13 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Caps2CtrlSpace
 {
     public class KeyMapper
     {
+        //设定一个休眠100ms的进程
         private static readonly TimeSpan Interval = TimeSpan.FromMilliseconds(100);
 
         private const int WH_KEYBOARD_LL = 13;
@@ -20,6 +22,14 @@ namespace Caps2CtrlSpace
         private static LowLevelKeyboardProc _proc = HookCallback;
 
         private static IntPtr _hookID = IntPtr.Zero;
+
+        private const uint KEYEVENTF_EXTENDEDKEY = 0x0001;
+
+        private const uint KEYEVENTF_KEYUP = 0x0002;
+
+        private const byte KEY_CONTROL = 17;
+
+        private const byte KEY_SPACEBAR = 32;
 
         public void SetupHook()
         {
@@ -62,19 +72,29 @@ namespace Caps2CtrlSpace
                 int vkCode = Marshal.ReadInt32(lParam);
                 if ((Keys)vkCode == Keys.Capital)
                 {
-                    SendKeys.Send("^ "); //将CapsLock转换为Ctrl+Space
-                    System.Threading.Thread.Sleep(Interval);
+                    //Console.WriteLine(Thread.CurrentThread.ThreadState );
+                    //Thread.Sleep(Interval);
 
-                    return (IntPtr)1;
+                    keybd_event(KEY_CONTROL, 0, 0, 0);
+                    keybd_event(KEY_SPACEBAR, 0, 0, 0);
+                    keybd_event(KEY_CONTROL, 0, KEYEVENTF_KEYUP, 0);
+                    keybd_event(KEY_SPACEBAR, 0, KEYEVENTF_KEYUP, 0);
+
+                    //SendKeys.Send("^ "); //将CapsLock转换为Ctrl+Space
+
+                    return (IntPtr)1;//阻止功能按键消息传递
                 }
 
             }
 
+            //如果返回1，则结束消息，这个消息到此为止，不再传递。
+            //如果返回0或调用CallNextHookEx函数则消息出了这个钩子继续往下传递，也就是传给消息真正的接受者
             return CallNextHookEx(_hookID, nCode, wParam, lParam);
 
         }
 
-
+        [DllImport("user32.dll",CharSet = CharSet.Auto, SetLastError = true)]
+        private static extern void keybd_event(byte bVk, byte bScan, uint dwFlags, int dwExtraInfo);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         private static extern IntPtr SetWindowsHookEx(int idHook, LowLevelKeyboardProc lpfn, IntPtr hMod, uint dwThreadId);
