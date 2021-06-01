@@ -1,0 +1,1 @@
+dotnet publish src/Caps2CtrlSpace.csproj -c Release -o ./release

@@ -31,45 +31,48 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.chkAutoRun = new System.Windows.Forms.CheckBox();
+            this.NotifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.ChkAutoRun = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("SimSun", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(43, 72);
+            this.label1.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(36, 60);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(488, 28);
+            this.label1.Size = new System.Drawing.Size(418, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Convert CapsLock key to Ctrl+Space";
             // 
-            // notifyIcon1
+            // NotifyIcon1
             // 
-            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "Caps2CtrlSpace";
-            this.notifyIcon1.Visible = true;
-            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            this.NotifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("NotifyIcon1.Icon")));
+            this.NotifyIcon1.Text = "Caps2CtrlSpace";
+            this.NotifyIcon1.Visible = true;
+            this.NotifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon1_MouseDoubleClick);
             // 
-            // chkAutoRun
+            // ChkAutoRun
             // 
-            this.chkAutoRun.AutoSize = true;
-            this.chkAutoRun.Location = new System.Drawing.Point(46, 142);
-            this.chkAutoRun.Name = "chkAutoRun";
-            this.chkAutoRun.Size = new System.Drawing.Size(331, 22);
-            this.chkAutoRun.TabIndex = 2;
-            this.chkAutoRun.Text = "Auto run app when windows startup";
-            this.chkAutoRun.UseVisualStyleBackColor = true;
-            this.chkAutoRun.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.ChkAutoRun.AutoSize = true;
+            this.ChkAutoRun.Location = new System.Drawing.Point(38, 118);
+            this.ChkAutoRun.Margin = new System.Windows.Forms.Padding(2);
+            this.ChkAutoRun.Name = "ChkAutoRun";
+            this.ChkAutoRun.Size = new System.Drawing.Size(294, 24);
+            this.ChkAutoRun.TabIndex = 2;
+            this.ChkAutoRun.Text = "Auto run app when windows startup";
+            this.ChkAutoRun.UseVisualStyleBackColor = true;
+            this.ChkAutoRun.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(621, 225);
-            this.Controls.Add(this.chkAutoRun);
+            this.ClientSize = new System.Drawing.Size(518, 188);
+            this.Controls.Add(this.ChkAutoRun);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -85,8 +88,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private System.Windows.Forms.CheckBox chkAutoRun;
+        private System.Windows.Forms.NotifyIcon NotifyIcon1;
+        private System.Windows.Forms.CheckBox ChkAutoRun;
     }
 }
 
