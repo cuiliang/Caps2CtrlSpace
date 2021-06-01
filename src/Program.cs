@@ -1,22 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace Caps2CtrlSpace
 {
-    static class Program
+    internal static class Program
     {
-        private static KeyMapper _keyMapper = new KeyMapper();
-
         /// <summary>
-        /// The main entry point for the application.
+        ///     The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
-            _keyMapper.SetupHook();
+            KeyMapper.SetupHook();
 
             if (Environment.OSVersion.Version.Major >= 6)
                 SetProcessDPIAware();
@@ -25,7 +21,7 @@ namespace Caps2CtrlSpace
             Application.Run(new Form1());
         }
 
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        [DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();
     }
 }

@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31313.79
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caps2CtrlSpace", "Caps2CtrlSpace\Caps2CtrlSpace.csproj", "{CEFE0577-A276-4520-81B7-09FF78D8A83B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caps2CtrlSpace", "src/Caps2CtrlSpace.csproj", "{0BDAB750-D45F-4EFC-924B-05E0A5D744F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,12 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CEFE0577-A276-4520-81B7-09FF78D8A83B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CEFE0577-A276-4520-81B7-09FF78D8A83B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CEFE0577-A276-4520-81B7-09FF78D8A83B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CEFE0577-A276-4520-81B7-09FF78D8A83B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BDAB750-D45F-4EFC-924B-05E0A5D744F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BDAB750-D45F-4EFC-924B-05E0A5D744F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BDAB750-D45F-4EFC-924B-05E0A5D744F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BDAB750-D45F-4EFC-924B-05E0A5D744F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CAFFC02F-B988-449E-8F23-884BC471DCCE}
 	EndGlobalSection
 EndGlobal
