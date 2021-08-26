@@ -33,16 +33,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.NotifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.ChkAutoRun = new System.Windows.Forms.CheckBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(36, 60);
+            this.label1.Location = new System.Drawing.Point(46, 58);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(418, 24);
+            this.label1.Size = new System.Drawing.Size(488, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "Convert CapsLock key to Ctrl+Space";
             // 
@@ -56,20 +57,32 @@
             // ChkAutoRun
             // 
             this.ChkAutoRun.AutoSize = true;
-            this.ChkAutoRun.Location = new System.Drawing.Point(38, 118);
+            this.ChkAutoRun.Location = new System.Drawing.Point(46, 117);
             this.ChkAutoRun.Margin = new System.Windows.Forms.Padding(2);
             this.ChkAutoRun.Name = "ChkAutoRun";
-            this.ChkAutoRun.Size = new System.Drawing.Size(294, 24);
+            this.ChkAutoRun.Size = new System.Drawing.Size(349, 28);
             this.ChkAutoRun.TabIndex = 2;
             this.ChkAutoRun.Text = "Auto run app when windows startup";
             this.ChkAutoRun.UseVisualStyleBackColor = true;
             this.ChkAutoRun.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(46, 181);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(127, 24);
+            this.linkLabel1.TabIndex = 3;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Project Home";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(518, 188);
+            this.ClientSize = new System.Drawing.Size(622, 265);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.ChkAutoRun);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -90,6 +103,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NotifyIcon NotifyIcon1;
         private System.Windows.Forms.CheckBox ChkAutoRun;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 

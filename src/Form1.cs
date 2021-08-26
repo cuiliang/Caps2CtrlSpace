@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 using Microsoft.Win32;
 
@@ -82,6 +83,18 @@ namespace Caps2CtrlSpace
         {
             ChkAutoRun.Checked = IsAutoStart();
             DoHide();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                Process.Start("https://github.com/cuiliang/Caps2CtrlSpace");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to open browser!");
+            }
         }
     }
 }
