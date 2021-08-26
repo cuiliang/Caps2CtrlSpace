@@ -46,16 +46,35 @@ namespace Caps2CtrlSpace
 
         private static nint HookCallback(int nCode, nint wParam, nint lParam)
         {
-            if (nCode < 0 || wParam != WmKeydown) return CallNextHookEx(_hookId, nCode, wParam, lParam);
+            if (nCode < 0 || wParam != WmKeydown)
+            {
+                return CallNextHookEx(_hookId, nCode, wParam, lParam);
+            }
+
             var vkCode = Marshal.ReadInt32(lParam);
-            if ((Keys) vkCode != Keys.Capital) return CallNextHookEx(_hookId, nCode, wParam, lParam);
+            if ((Keys)vkCode != Keys.Capital)
+            {
+                return CallNextHookEx(_hookId, nCode, wParam, lParam);
+            }
 
-            keybd_event(KeyControl, 0, 0, 0);
-            keybd_event(KeySpace, 0, 0, 0);
-            keybd_event(KeyControl, 0, KeyEventFlagKeyUp, 0);
-            keybd_event(KeySpace, 0, KeyEventFlagKeyUp, 0);
+            // 如果按下了控制键，则不执行输入法切换。
+            if (Control.ModifierKeys == Keys.None)
+            {
+                keybd_event(KeyControl, 0, 0, 0);
+                keybd_event(KeySpace, 0, 0, 0);
+                keybd_event(KeyControl, 0, KeyEventFlagKeyUp, 0);
+                keybd_event(KeySpace, 0, KeyEventFlagKeyUp, 0);
 
-            return 1; //阻止功能按键消息传递
+                return 1; //阻止功能按键消息传递
+            }
+            else
+            {
+                return 0;
+            }
+
+           
+
+           
 
             //如果返回1，则结束消息，这个消息到此为止，不再传递。
             //如果返回0或调用CallNextHookEx函数则消息出了这个钩子继续往下传递，也就是传给消息真正的接受者

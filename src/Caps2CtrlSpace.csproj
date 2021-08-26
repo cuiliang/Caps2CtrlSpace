@@ -8,5 +8,6 @@
     <AssemblyName>Caps2CtrlSpace</AssemblyName>
 	  <LangVersion>latest</LangVersion>
 	  <ApplicationManifest>app.manifest</ApplicationManifest>
+	  <Version>1.0.1</Version>
   </PropertyGroup>
 </Project>
