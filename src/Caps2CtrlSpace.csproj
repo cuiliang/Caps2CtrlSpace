@@ -2,9 +2,12 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFrameworks>net5.0-windows;net462</TargetFrameworks>
     <UseWindowsForms>true</UseWindowsForms>
     <RootNamespace>Caps2CtrlSpace</RootNamespace>
     <AssemblyName>Caps2CtrlSpace</AssemblyName>
+	  <LangVersion>latest</LangVersion>
+	  <ApplicationManifest>app.manifest</ApplicationManifest>
+	  <Version>1.0.1</Version>
   </PropertyGroup>
 </Project>

@@ -31,13 +31,16 @@ PS：MSDN 关于此功能的描述文档：
 # Caps2CtrlSpace原理
 监听按键，如果是Capslock，转换成Ctrl+Space
 
-# Caps2CtrlSpace 开发环境
- VS2015
+
+# 开发环境
+ VS2019
  
-#Caps2CtrlSpace 二进制文件下载
-https://github.com/cuiliang/Caps2CtrlSpace/blob/master/Caps2CtrlSpace.exe
+#  Exe下载
+https://github.com/cuiliang/Caps2CtrlSpace/releases
+
   
-#使用
+#  使用
+如需提权（在以管理员身份运行的程序中生效），请将其复制到`c:\program files`目录中使用。
 启动后，会自动隐藏窗口显示在系统托盘内一个桔黄色的小点的图标。 这时候可以按capslock来切换中英文了。
  
 *自动启动*
